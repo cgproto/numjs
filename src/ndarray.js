@@ -543,6 +543,13 @@ NdArray.prototype.max = function () {
   return ops.sup(this.selection);
 };
 
+NdArray.prototype.argmax = function () {
+  if (this.selection.size === 0) {
+    return null;
+  }
+  return ops.argmax(this.selection);
+};
+
 /**
 * Return the minimum value of the array
 *
@@ -553,6 +560,13 @@ NdArray.prototype.min = function () {
     return null;
   }
   return ops.inf(this.selection);
+};
+
+NdArray.prototype.argmin = function () {
+  if (this.selection.size === 0) {
+    return null;
+  }
+  return ops.argmin(this.selection);
 };
 
 /**

@@ -185,6 +185,10 @@ function min (x) {
   return NdArray.new(x).min();
 }
 
+function argmin (x) {
+  return NdArray.new(x).argmin();
+}
+
 /**
  * Return the maximum value of the array
  *
@@ -193,6 +197,10 @@ function min (x) {
  */
 function max (x) {
   return NdArray.new(x).max();
+}
+
+function argmax (x) {
+  return NdArray.new(x).argmax();
 }
 
 /**
@@ -849,6 +857,8 @@ module.exports = {
   identity: identity,
   stack: stack,
   rot90: rot90,
+  argmax: argmax,
+  argmin: argmin,
   int8: function (array) { return NdArray.new(array, 'int8'); },
   uint8: function (array) { return NdArray.new(array, 'uint8'); },
   int16: function (array) { return NdArray.new(array, 'int16'); },
@@ -856,6 +866,5 @@ module.exports = {
   int32: function (array) { return NdArray.new(array, 'int32'); },
   uint32: function (array) { return NdArray.new(array, 'uint32'); },
   float32: function (array) { return NdArray.new(array, 'float32'); },
-  float64: function (array) { return NdArray.new(array, 'float64'); },
-  images: require('./images')
+  float64: function (array) { return NdArray.new(array, 'float64'); }
 };
